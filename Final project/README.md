@@ -1,25 +1,11 @@
-# My Anime Projects Portfolio
+## How to Run the Project and View My Anime Website
 
-This is a personal project showcasing anime-themed websites I have built using HTML, CSS, and JavaScript (and React in some cases). Each project is inspired by popular anime and designed to highlight my frontend development skills.
+Click the green "Code" button above
 
-### Anime Fan Portal
-A community website for anime fans where users can track episodes and connect with others.
+Select "Download ZIP"
 
-- Built with: React
-- Features: Episode tracking, fan updates, responsive design
+Unzip the Files
 
-### Manga Reader App
-A simple digital manga reader with a clean interface.
+select the folder named Final project
 
-- Built with: React
-- Features: Manga display, smooth navigation, minimal UI
-
-### Anime Character Database
-A searchable database of anime characters.
-
-- Built with: React
-- Features: Character info, search and filter, stats view
-
-## Image Usage
-
-All images used are stored locally inside the `images/` folder.
+Run index.html directly in google chrome
