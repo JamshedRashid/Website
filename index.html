@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anime Portfolio | Jamshed</title>
+  <!-- Added Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DotGothic16&display=swap" rel="stylesheet">
   <style>
-    /* Basic Reset */
+    /* Enhanced Reset */
     * {
       margin: 0;
       padding: 0;
@@ -13,50 +15,112 @@
     }
     
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'DotGothic16', sans-serif;
       line-height: 1.6;
-      color: #333;
+      color: #fffffe;
+      background-color: #0f0e17;
     }
     
-    /* Navigation */
+    /* Improved Navigation */
     .navbar {
-      background: #222;
-      padding: 1rem;
+      background: rgba(15, 14, 23, 0.9);
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      border-bottom: 2px solid #ff8906;
     }
     
     .nav-container {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       max-width: 1200px;
       margin: 0 auto;
     }
     
     .nav-logo a {
-      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      color: #ff8906;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 1.2rem;
+      text-shadow: 0 0 5px #ff8906;
     }
     
-    /* Hero Section */
+    /* Added nav menu */
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-item {
+      margin-left: 2rem;
+    }
+    
+    .nav-link {
+      color: #fffffe;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    
+    .nav-link:hover {
+      color: #ff8906;
+    }
+    
+    /* Enhanced Hero Section */
     .hero {
-      padding: 4rem 1rem;
-      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+      text-align: left;
+      background: radial-gradient(circle at center, #0f0e17 0%, #000 100%);
+    }
+    
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
     }
     
     .hero-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      color: #ff8906;
     }
     
-    /* Basic Button */
+    .hero-description {
+      margin-bottom: 2rem;
+      color: #a7a9be;
+      max-width: 600px;
+    }
+    
+    /* Improved Buttons */
     .btn {
       display: inline-block;
-      padding: 0.5rem 1rem;
-      background: #ff6b6b;
-      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
       text-decoration: none;
-      border-radius: 4px;
-      margin: 0.5rem;
+      font-weight: bold;
+      margin-right: 1rem;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary {
+      background: #ff8906;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 137, 6, 0.4);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: #ff8906;
+      border: 2px solid #ff8906;
     }
   </style>
 </head>
@@ -67,19 +131,50 @@
       <div class="nav-logo">
         <a href="#">ANIME PORTFOLIO</a>
       </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Works</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1 class="hero-title">Welcome to My Anime Portfolio</h1>
-    <p>Coming soon - A showcase of my anime-inspired projects</p>
-    <a href="#" class="btn">Learn More</a>
+    <div class="hero-container">
+      <h1 class="hero-title">Welcome to My Anime Portfolio</h1>
+      <p class="hero-description">
+        Hey! I'm Jamshed - a developer with shonen protagonist energy, 
+        here to build websites that pack a Kamehameha-level punch.
+      </p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary">View My Works</a>
+        <a href="#" class="btn btn-secondary">Hire Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Projects Section -->
+  <section class="projects">
+    <div class="container">
+      <h2>My Anime Works</h2>
+      <p>Projects coming soon...</p>
+    </div>
   </section>
 
   <script>
-    // Basic JavaScript will go here later
-    console.log('Portfolio starting...');
+    // Added basic interactivity
+    console.log('Portfolio loading...');
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
   </script>
 </body>
 </html>
