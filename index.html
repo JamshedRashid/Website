@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anime Portfolio | Jamshed</title>
-  <!-- Added Google Fonts -->
+  <title>Anime Portfolio | Your Name</title>
+  <!-- Anime-inspired Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=DotGothic16&display=swap" rel="stylesheet">
   <style>
-    /* Enhanced Reset */
+    /* === ANIME STYLE RESET === */
     * {
       margin: 0;
       padding: 0;
@@ -15,38 +15,40 @@
     }
     
     body {
+      background-color: #0f0e17;
+      color: #fffffe;
       font-family: 'DotGothic16', sans-serif;
       line-height: 1.6;
-      color: #fffffe;
-      background-color: #0f0e17;
+      overflow-x: hidden;
     }
     
-    /* Improved Navigation */
+    /* === NAVIGATION (SAILOR MOON STYLE) === */
     .navbar {
       background: rgba(15, 14, 23, 0.9);
-      padding: 1rem 2rem;
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid #ff8906;
       position: fixed;
       width: 100%;
-      border-bottom: 2px solid #ff8906;
+      z-index: 1000;
     }
     
     .nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
     
     .nav-logo a {
       font-family: 'Press Start 2P', cursive;
+      font-size: 1.2rem;
       color: #ff8906;
       text-decoration: none;
-      font-size: 1.2rem;
       text-shadow: 0 0 5px #ff8906;
     }
     
-    /* Added nav menu */
     .nav-menu {
       display: flex;
       list-style: none;
@@ -54,49 +56,98 @@
     
     .nav-item {
       margin-left: 2rem;
+      position: relative;
     }
     
     .nav-link {
       color: #fffffe;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: all 0.3s ease;
     }
     
     .nav-link:hover {
       color: #ff8906;
+      text-shadow: 0 0 10px #ff8906;
     }
     
-    /* Enhanced Hero Section */
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #ff8906;
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* === HERO (DRAGON BALL Z STYLE) === */
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       padding: 0 2rem;
-      text-align: left;
       background: radial-gradient(circle at center, #0f0e17 0%, #000 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(circle, transparent 20%, #0f0e17 70%, transparent 71%),
+        linear-gradient(45deg, rgba(255, 0, 100, 0.1) 0%, rgba(0, 100, 255, 0.1) 100%);
+      animation: animeBg 20s linear infinite;
+      z-index: 0;
+    }
+    
+    @keyframes animeBg {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
     
     .hero-container {
       max-width: 1200px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
     }
     
     .hero-title {
-      font-family: 'Press Start 2P', cursive;
-      font-size: 2.5rem;
+      font-size: 3.5rem;
       margin-bottom: 1.5rem;
+      font-family: 'Press Start 2P', cursive;
       line-height: 1.2;
-      color: #ff8906;
+      background: linear-gradient(90deg, #ff8906, #e53170);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(229, 49, 112, 0.3);
     }
     
     .hero-description {
       margin-bottom: 2rem;
       color: #a7a9be;
-      max-width: 600px;
+      font-size: 1.2rem;
     }
     
-    /* Improved Buttons */
     .btn {
       display: inline-block;
       padding: 0.8rem 2rem;
@@ -104,23 +155,409 @@
       text-decoration: none;
       font-weight: bold;
       margin-right: 1rem;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
     
     .btn-primary {
-      background: #ff8906;
+      background: linear-gradient(45deg, #ff8906, #e53170);
       color: white;
+      border: none;
     }
     
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 137, 6, 0.4);
+      box-shadow: 0 5px 15px rgba(229, 49, 112, 0.4);
     }
     
     .btn-secondary {
       background: transparent;
       color: #ff8906;
       border: 2px solid #ff8906;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255, 137, 6, 0.1);
+      box-shadow: 0 0 10px rgba(255, 137, 6, 0.5);
+    }
+    
+    /* === PROJECTS (CYBERPUNK STYLE) === */
+    .projects {
+      padding: 5rem 2rem;
+      background: #0a0a10;
+      position: relative;
+    }
+    
+    .projects::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(90deg, #ff8906, #e53170, #ff8906);
+      background-size: 200% 100%;
+      animation: gradientBG 3s linear infinite;
+    }
+    
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-family: 'Press Start 2P', cursive;
+      color: #fffffe;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #ff8906, #e53170);
+      bottom: -10px;
+      left: 0;
+      border-radius: 3px;
+    }
+    
+    .section-description {
+      color: #a7a9be;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .project-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 137, 6, 0.2);
+      position: relative;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(229, 49, 112, 0.2);
+      border: 1px solid rgba(255, 137, 6, 0.5);
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255, 137, 6, 0.1), rgba(229, 49, 112, 0.1));
+      z-index: -1;
+    }
+    
+    .project-image {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .project-card:hover .project-image img {
+      transform: scale(1.1);
+    }
+    
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 14, 23, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .project-card:hover .project-overlay {
+      opacity: 1;
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .project-link {
+      padding: 0.5rem 1rem;
+      background: rgba(255, 137, 6, 0.8);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    
+    .project-link:hover {
+      background: rgba(229, 49, 112, 0.8);
+    }
+    
+    .project-info {
+      padding: 1.5rem;
+    }
+    
+    .project-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #fffffe;
+    }
+    
+    .project-description {
+      color: #a7a9be;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .tag {
+      background: rgba(255, 137, 6, 0.2);
+      color: #ff8906;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+    }
+    
+    /* === CONTACT (NEON GENESIS STYLE) === */
+    .contact {
+      padding: 5rem 2rem;
+      background: #0f0e17;
+      position: relative;
+    }
+    
+    .contact::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(90deg, #ff8906, #e53170, #ff8906);
+      background-size: 200% 100%;
+      animation: gradientBG 3s linear infinite;
+    }
+    
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 137, 6, 0.1);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .contact-icon svg {
+      color: #ff8906;
+    }
+    
+    .contact-details h4 {
+      color: #fffffe;
+      margin-bottom: 0.3rem;
+    }
+    
+    .contact-details p {
+      color: #a7a9be;
+    }
+    
+    .contact-form {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 137, 6, 0.2);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      color: #fffffe;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 137, 6, 0.3);
+      border-radius: 5px;
+      color: #fffffe;
+      font-family: 'DotGothic16', sans-serif;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #ff8906;
+      box-shadow: 0 0 10px rgba(255, 137, 6, 0.3);
+    }
+    
+    .btn-full {
+      width: 100%;
+    }
+    
+    /* === FOOTER (AKIRA STYLE) === */
+    .footer {
+      background: #000;
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .footer p {
+      color: #a7a9be;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .social-link {
+      color: #a7a9be;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .social-link:hover {
+      color: #ff8906;
+    }
+    
+    /* === RESPONSIVE (MOBILE FRIENDLY) === */
+    @media (max-width: 768px) {
+      .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: #0f0e17;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.3s ease;
+      }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .nav-item {
+        margin: 1rem 0;
+      }
+      
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+      }
+      
+      .bar {
+        width: 100%;
+        height: 3px;
+        background: #fffffe;
+        transition: all 0.3s ease;
+      }
+      
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+      
+      .contact-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-title {
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
@@ -129,52 +566,246 @@
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-logo">
-        <a href="#">ANIME PORTFOLIO</a>
+        <a href="#home">ANIME PORTFOLIO</a>
       </div>
       <ul class="nav-menu">
-        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Works</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+        <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#projects" class="nav-link">Works</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section id="home" class="hero">
     <div class="hero-container">
-      <h1 class="hero-title">Welcome to My Anime Portfolio</h1>
-      <p class="hero-description">
-        Hey! I'm Jamshed - a developer with shonen protagonist energy, 
-        here to build websites that pack a Kamehameha-level punch.
-      </p>
-      <div class="hero-buttons">
-        <a href="#" class="btn btn-primary">View My Works</a>
-        <a href="#" class="btn btn-secondary">Hire Me</a>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          ようこそ!<br>
+          <span>Jamshed’s Anime Archive</span>
+        </h1>
+        <p class="hero-description">
+            Hey! I'm Jamshed – a developer with shonen protagonist energy, here to build websites that pack a Kamehameha-level punch.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Works</a>
+          <a href="#contact" class="btn btn-secondary">Hire Me</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- New Projects Section -->
-  <section class="projects">
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
     <div class="container">
-      <h2>My Anime Works</h2>
-      <p>Projects coming soon...</p>
+      <div class="section-header">
+        <h2 class="section-title">MY ANIME WORKS</h2>
+        <p class="section-description">
+          A collection of my recent projects inspired by your favorite anime
+        </p>
+      </div>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/image-1.jpg" alt="Anime Fan Site">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">View Live</a>
+                <a href="#" class="project-link">Source Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Anime Fan Portal</h3>
+            <p class="project-description">
+              A vibrant community site for anime fans. I will keep updating this by tracking episodes.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Share</span>
+              <span class="tag">Learn more</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/image-2.jpg" alt="Manga Reader">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">View Live</a>
+                <a href="#" class="project-link">Source Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Manga Reader App</h3>
+            <p class="project-description">
+              A sleek digital manga reader App made by me.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Share</span>
+              <span class="tag">Learn more</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/image-3.jpg" alt="Character Database">
+            <div class="project-overlay">
+              <div class="project-links">
+                <a href="#" class="project-link">View Live</a>
+                <a href="#" class="project-link">Source Code</a>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Anime Character DB</h3>
+            <p class="project-description">
+              Comprehensive database of anime characters with filters and stats.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Share</span>
+              <span class="tag">Learn more</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">GET IN TOUCH</h2>
+        <p class="section-description">
+          Ready to collaborate on your next anime-inspired project?
+        </p>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <p>Lappeenranta, Finland
+            </p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p>jamshed_rashid@gmail.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div class="contact-details">
+              <h4>Phone</h4>
+              <p>+358 41 4567910</p>
+            </div>
+          </div>
+        </div>
+        
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2024 Anime Portfolio. All rights reserved.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">Twitter</a>
+          <a href="#" class="social-link">GitHub</a>
+          <a href="#" class="social-link">MyAnimeList</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    // Added basic interactivity
-    console.log('Portfolio loading...');
-    
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       });
     });
-  </script>
-</body>
-</html>
+
+    
